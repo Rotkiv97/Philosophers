@@ -1,33 +1,33 @@
-NAME        := philo
-CC        := gcc
-FLAGS    := -Wall -Wextra -Werror -g -pthread
+NAME := philo
+CC := gcc
+FLAGS := -Wall -Wextra -Werror -g -pthread
 
-SRCS        :=      main.c \
-                          ft_check.c \
-                          ft_utils.c \
-						  ft_get_time.c \
-						  ft_vita.c \
-						  ft_free.c\
-						  ft_get_def_print.c\
+SRCS := main.c \
+			ft_check.c \
+			ft_utils.c \
+			ft_get_time.c \
+			ft_vita.c \
+			ft_free.c\
+			ft_get_def_print.c\
                           
-OBJS        := $(SRCS:.c=.o)
+OBJS := $(SRCS:.c=.o)
 
 .c.o:
 	${CC} ${FLAGS} -c $< -o ${<:.c=.o}
 
-RM		    := rm -f
+RM := rm -f
 
-${NAME}:	${OBJS}
-			${CC} ${FLAGS} -o ${NAME} ${OBJS}
+${NAME}: ${OBJS}
+	${CC} ${FLAGS} -o ${NAME} ${OBJS}
 
-all:		${NAME}
+all: ${NAME}
 
-bonus:		all
+bonus: all
 
 clean:
-			@ ${RM} *.o */*.o */*/*.o
+	@ ${RM} *.o */*.o */*/*.o
 
-fclean:		clean
-			@ ${RM} ${NAME}
+fclean:	clean
+	@ ${RM} ${NAME}
 
-re:			fclean all
+re:	fclean all

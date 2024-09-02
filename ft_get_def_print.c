@@ -26,7 +26,7 @@ void	ft_print(t_arrphilo *tphilo, char *msg, int k)
 void	ft_print_def(t_philo *philo, int i)
 {
 	pthread_mutex_lock(&philo->mutex);
-	printf("%ldms  %d   %s\n", get_time(philo), i + 1, "died");
+	printf("%ldms  %d   %s 💀\n", get_time(philo), i + 1, "died");
 	pthread_mutex_unlock(&philo->mutex);
 	philo->count_die = 1;
 	pthread_mutex_unlock(&philo->die);

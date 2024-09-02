@@ -17,16 +17,16 @@ void	ft_gest_mang(t_arrphilo *tphilo, int k)
 	if (tphilo->filosofi == tphilo->nfi)
 	{
 		pthread_mutex_lock(&tphilo->fork[0]);
-		ft_print(tphilo, "taken a fork", k);
+		ft_print(tphilo, "taken a fork 🍴", k);
 		pthread_mutex_lock(&tphilo->fork[tphilo->nfi - 1]);
-		ft_print(tphilo, "taken a fork", k);
+		ft_print(tphilo, "taken a fork 🍴", k);
 	}
 	else
 	{
 		pthread_mutex_lock(&tphilo->fork[tphilo->nfi - 1]);
-		ft_print(tphilo, "taken a fork", k);
+		ft_print(tphilo, "taken a fork 🍴", k);
 		pthread_mutex_lock(&tphilo->fork[tphilo->nfi]);
-		ft_print(tphilo, "taken a fork", k);
+		ft_print(tphilo, "taken a fork 🍴", k);
 	}
 }
 
@@ -41,7 +41,7 @@ void	mangia(t_arrphilo *tphilo)
 	tphilo->filo->ult_mang[tphilo->nfi - 1] = get_time(tphilo->filo);
 	pthread_mutex_unlock(&tphilo->filo->ultima_mag);
 	pthread_mutex_unlock(tphilo->die);
-	ft_print(tphilo, "eating", k);
+	ft_print(tphilo, "eating 🍔", k);
 	usleep(tphilo->filo->mangia * 1000);
 	if (tphilo->filo->filosofi == tphilo->nfi)
 	{
@@ -60,7 +60,7 @@ void	dorme(t_arrphilo *tphilo)
 	int	k;
 
 	k = tphilo->nfi;
-	ft_print(tphilo, "sleeping", k);
+	ft_print(tphilo, "sleeping 😴", k);
 	usleep(tphilo->filo->dorme * 1000);
 }
 
@@ -69,7 +69,7 @@ void	pensa(t_arrphilo *tphilo)
 	int	k;
 
 	k = tphilo->nfi;
-	ft_print(tphilo, "thinking", k);
+	ft_print(tphilo, "thinking 💭", k);
 }
 
 void	*percorso(void *lol)

@@ -63,9 +63,9 @@ void	ft_condizione_1(t_philo *philo)
 {
 	if (philo->filosofi == 1)
 	{
-		printf("%ldms  %d   %s\n", get_time(philo), 1, "taken a fork");
+		printf("%ldms  %d   %s 🍴\n", get_time(philo), 1, "taken a fork");
 		usleep(philo->morte * 1000);
-		printf("%ldms  %d   %s\n", get_time(philo), 1, "death");
+		printf("%ldms  %d   %s 💀\n", get_time(philo), 1, "death");
 	}
 }
 
@@ -103,6 +103,6 @@ int	main(int ac, char **av)
 	if (ac == 5 || ac == 6)
 		ft_philosophers(av, ac);
 	else
-		printf("\033[33mcoglione metti tutti gli argomenti\n");
+		printf("\033[31mError: numero argomenti invalido\033[0m\n");
 	return (0);
 }
